@@ -2,8 +2,8 @@ module.exports = {
   // this will check Typescript files
   "**/*.(ts|tsx)": () => "yarn tsc --noEmit",
 
-  // This will lint and format TypeScript and                                             //JavaScript files
-  "**/*.(ts|tsx|js)": (filenames) => [
+  // This will lint and format TypeScript, Vue and  //JavaScript files
+  "**/*.(ts|tsx|js|vue)": (filenames) => [
     `yarn eslint --fix ${filenames.join(" ")}`,
     `yarn prettier --write ${filenames.join(" ")}`,
   ],
