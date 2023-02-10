@@ -17,6 +17,8 @@
 
 ## Understand this workspace
 
+-
+
 Run `nx graph` to see a diagram of the dependencies of the projects.
 
 ## Remote caching
@@ -26,3 +28,9 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Resources used
+
+- [https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb](https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb)
+- [https://nx.dev/recipes/other/using-tailwind-css-in-react](https://nx.dev/recipes/other/using-tailwind-css-in-react)
+- [https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b](https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b)
