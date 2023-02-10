@@ -1,5 +1,15 @@
 # NxViteVue
-> Bulding Vue 3 in Nx with Vite
+
+> Building Vue 3 in Nx with Vite
+
+### Added
+
+- Vue 3 with Vite
+- TypeScript
+- eslint
+- prettier
+- lint-staged with husky
+- tailwindcss
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
