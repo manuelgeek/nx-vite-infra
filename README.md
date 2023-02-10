@@ -17,8 +17,6 @@
 
 ## Understand this workspace
 
--
-
 Run `nx graph` to see a diagram of the dependencies of the projects.
 
 ## Remote caching
@@ -34,3 +32,13 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - [https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb](https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb)
 - [https://nx.dev/recipes/other/using-tailwind-css-in-react](https://nx.dev/recipes/other/using-tailwind-css-in-react)
 - [https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b](https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b)
+
+## About Me
+
+<p align="center"><img src="https://magak.me/assets/images/Geek-logo.png" width="150">
+
+<a target="_blank" href="https://magak.me">Magak Emmanuel</a>
+
+</p>
+
+Happy coding, Star before Fork 😊💪💯
