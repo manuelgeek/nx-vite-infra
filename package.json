@@ -4,12 +4,33 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@nrwl/eslint-plugin-nx": "15.6.3",
+    "@nrwl/jest": "^15.6.3",
+    "@nrwl/linter": "15.6.3",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.6.3",
+    "@nxext/vite": "^15.0.0",
+    "@nxext/vitest": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/ui": "^0.9.3",
+    "c8": "^7.12.0",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.26.0",
     "nx": "15.6.3",
     "prettier": "^2.6.2",
-    "typescript": "~4.8.2"
+    "rxjs": "^7.8.0",
+    "typescript": "~4.8.2",
+    "vite": "^3.1.8",
+    "vite-plugin-eslint": "^1.6.0",
+    "vitest": "^0.24.3",
+    "vitest-preview": "latest",
+    "vue": "^3.2.47"
+  },
+  "overrides": {
+    "vite": "^3.1.8"
   }
 }
