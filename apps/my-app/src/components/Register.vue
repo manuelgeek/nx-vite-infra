@@ -2,7 +2,11 @@
     <!-- component -->
     <div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
         <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
-            <h1 class="font-bold text-center text-2xl mb-5">Your Logo</h1>
+            <h1 class="font-bold text-center text-2xl mb-5">JS Bits</h1>
+            <div class="flex pb-10 justify-center">
+                <img src="https://avatars.githubusercontent.com/u/87544278?s=400&u=f0c6bf50bc6c85e3602087c116d0c85e152b3a53&v=4"
+                    class="w-20 rounded-lg" alt="logo">
+            </div>
             <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
                 <div class="px-5 py-7">
                     <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
