@@ -13,8 +13,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-vite-vue/ui-kit": ["libs/ui-kit/src/index.ts"],
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
