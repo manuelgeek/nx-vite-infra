@@ -2,7 +2,11 @@
   "name": "nx-vite-vue",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "my-app:serve": "nx run my-app:serve",
+    "my-app:build": "nx run my-app:serve",
+    "lint": "nx run-many --target=lint --all --parallel"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/eslint-plugin-nx": "15.6.3",
@@ -21,6 +25,8 @@
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "nx": "15.6.3",
     "postcss": "^8.4.21",
     "prettier": "^2.6.2",
