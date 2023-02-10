@@ -1,1 +1,3 @@
-export * from "./lib/ui-kit"
+import FormInput from "./lib/components/Input.vue"
+
+export { FormInput }

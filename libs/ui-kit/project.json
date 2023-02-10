@@ -8,7 +8,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/ui-kit/**/*.ts"]
+        "lintFilePatterns": ["libs/ui-kit/**/*.(ts|vue)"]
       }
     },
     "test": {
