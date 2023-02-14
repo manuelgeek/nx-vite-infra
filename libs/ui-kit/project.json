@@ -4,6 +4,21 @@
   "sourceRoot": "libs/ui-kit/src",
   "projectType": "library",
   "targets": {
+    "storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["cd libs/ui-kit && npm run storybook"]
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd libs/ui-kit && npm run build-storybook",
+          "cd libs/ui-kit && mkdir -p ../../dist/libs/storybook &&  cp -r storybook-static/ ../../dist/libs/storybook/"
+        ]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
