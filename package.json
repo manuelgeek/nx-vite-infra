@@ -5,7 +5,9 @@
   "scripts": {
     "my-app:serve": "nx run my-app:serve",
     "my-app:build": "nx run my-app:serve",
-    "lint": "nx run-many --target=lint --all --parallel"
+    "lint": "nx run-many --target=lint --all --parallel",
+    "storybook:serve": "nx run ui-kit:storybook",
+    "storybook:build": "nx run ui-kit:build-storybook"
   },
   "private": true,
   "devDependencies": {
