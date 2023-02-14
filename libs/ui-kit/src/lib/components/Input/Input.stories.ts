@@ -37,10 +37,19 @@ Password.args = {
 export const Email = Template.bind({})
 Email.args = {
   type: "email",
-  label: "Button",
+  label: "Email",
+}
+
+export const Error = Template.bind({})
+Error.args = {
+  type: "text",
+  label: "Error",
+  isError: true,
 }
 
 interface InputProps {
   type: string
   label: string
+  class?: string
+  isError?: boolean
 }

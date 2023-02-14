@@ -3,7 +3,9 @@ const baseConfig = require("../../../.tailwind/tailwind.config")
 
 module.exports = {
   presets: [baseConfig],
-  content: [join(__dirname, "../src/**/!(*.stories|*.spec).{ts,tsx,html}")],
+  content: [
+    join(__dirname, "../src/**/!(*.stories|*.spec).{ts,tsx,html,vue,js}"),
+  ],
   theme: {
     extend: {
       boxShadow: {
