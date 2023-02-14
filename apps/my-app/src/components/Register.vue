@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { FormInput } from "@nx-vite-vue/ui-kit"
+import CustomButton from "../../../../libs/ui-kit/src/lib/components/CustomButton/CustomButton.vue"
 </script>
 <template>
   <!-- component -->
@@ -17,10 +18,7 @@ import { FormInput } from "@nx-vite-vue/ui-kit"
         <div class="px-5 py-7">
           <FormInput type="text" label="E-Mail" />
           <FormInput type="password" label="Password" />
-          <button
-            type="button"
-            class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block"
-          >
+          <CustomButton color="primary">
             <span class="inline-block mr-2">Login</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +34,7 @@ import { FormInput } from "@nx-vite-vue/ui-kit"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </button>
+          </CustomButton>
         </div>
         <div class="p-5">
           <div class="grid grid-cols-3 gap-1">
