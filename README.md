@@ -32,6 +32,7 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - [https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb](https://medium.com/js-dojo/work-with-vite-and-nx-af2e5a7558cb)
 - [https://nx.dev/recipes/other/using-tailwind-css-in-react](https://nx.dev/recipes/other/using-tailwind-css-in-react)
 - [https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b](https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b)
+- [https://miyauchi.dev/posts/vite-vue3-typescript/](https://miyauchi.dev/posts/vite-vue3-typescript/) for eslint
 
 ##TODO:
 Learnt about [https://nx.dev/packages/vite](https://nx.dev/packages/vite). Will dfinately check it out
