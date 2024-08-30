@@ -24,6 +24,7 @@
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack4": "^6.5.16",
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",

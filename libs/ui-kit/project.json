@@ -13,11 +13,31 @@
     "build-storybook": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
+        "cwd": "libs/ui-kit",
         "commands": [
-          "cd libs/ui-kit && npm run build-storybook",
-          "cd libs/ui-kit && mkdir -p ../../dist/libs/storybook &&  cp -r storybook-static/ ../../dist/libs/storybook/"
+          "npm run build-storybook"
         ]
       }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["dist/libs/storybook/"],
+      "options": {
+        "commands": [
+          "cp -r libs/ui-kit/storybook-static/** dist/libs/storybook/"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build-storybook",
+          "projects": "self"
+        },
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
