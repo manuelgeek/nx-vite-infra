@@ -1,0 +1,15 @@
+version: 1
+title:
+  patterns:
+    - '^\[[A-Z]+\d?\-\d+\](\ )[\w\ \-]+$'
+  error: 'The PR title format should be: [<LINEAR ticket ID>] <LINEAR ticket name> eg [PROV-101] Eslint Set up'
+body:
+  patterns:
+    - '[\w\s]*'
+  error: 'The body can not be empty'
+branch:
+  patterns:
+    - '^([a-z]+\/)?[A-Za-z]+\d?\-\d+\-[a-zA-Z0-9\-\_]+$'
+  error: 'The branch name format should be: (username)?/<LINEAR ticket ID>-<lowercase LINEAR ticket slug> eg PROV-101-eslint-set-up or pradip/PROV-101-eslint-set-up'
+reviewers:
+  minimum: 1

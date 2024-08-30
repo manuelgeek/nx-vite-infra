@@ -1,0 +1,31 @@
+# name: PR Checker
+
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - edited
+#       - reopened
+#       - synchronize
+#       - labeled
+#       - unlabeled
+#       - review_requested
+#       - review_request_removed
+
+# jobs:
+#   pr-lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # ensure the branch name follows the convention
+#       - name: Branch Name Checker
+#         uses: innerspacetrainings/Prace.js@master
+#         with:
+#           configuration-path: .github/prace.yml
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ensure all checklist items in the PR body are completed
+#      - name: Pre-merge Checklist Checker
+#        uses: kentaro-m/task-completed-checker-action@v0.1.0
+#        with:
+#          repo-token: '${{ secrets.GITHUB_TOKEN }}'

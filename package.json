@@ -6,8 +6,10 @@
     "my-app:serve": "nx run my-app:serve",
     "my-app:build": "nx run my-app:build",
     "lint": "nx run-many --target=lint --all --parallel",
+    "test": "nx run-many --target=test --all --parallel",
+    "build": "nx run-many --target=build --all --parallel",
     "storybook:serve": "nx run ui-kit:storybook",
-    "storybook:build": "nx run ui-kit:build-storybook"
+    "storybook:build": "nx run ui-kit:build"
   },
   "private": true,
   "devDependencies": {

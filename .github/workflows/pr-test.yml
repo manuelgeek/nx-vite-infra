@@ -1,0 +1,58 @@
+name: Lint and Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  repository_dispatch:
+    types: [lint-command]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # - name: Set environment variables
+      #   run: |
+      #     echo "DATABASE_URL=postgresql://postgres:postgres@localhost:5432/api" >> $GITHUB_ENV
+
+      # The node dependencies cache which is invalided every time the yarn.lock file changes.
+      - name: Restoring node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install
+        run: |
+          yarn
+      #    yarn prepare:front
+
+      # - name: Format
+      #   run: yarn format:check
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+
+      #  TODO: fix storybook builds
+      # - name: Build
+      #   run: yarn build
