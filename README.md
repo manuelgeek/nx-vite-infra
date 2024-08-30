@@ -26,7 +26,7 @@ apps/
 
 libs/
  - ui-kit
- 
+
 infrastructure/
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
@@ -51,7 +51,8 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 - [https://nx.dev/recipes/other/using-tailwind-css-in-react](https://nx.dev/recipes/other/using-tailwind-css-in-react)
 - [https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b](https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b)
 - [https://miyauchi.dev/posts/vite-vue3-typescript/](https://miyauchi.dev/posts/vite-vue3-typescript/) for eslint -[https://storybook.js.org/recipes/tailwindcss](https://storybook.js.org/recipes/tailwindcss) tailwind in storybook
-- -[https://github.com/storybookjs/storybook/discussions/12691](https://github.com/storybookjs/storybook/discussions/12691) vue 3 props
+- [https://github.com/storybookjs/storybook/discussions/12691](https://github.com/storybookjs/storybook/discussions/12691) vue 3 props
+- [AWS CDK examples](https://github.com/aws-samples/aws-cdk-examples/tree/main)
 
 ##TODO:
 Learnt about [https://nx.dev/packages/vite](https://nx.dev/packages/vite). Will dfinately check it out
