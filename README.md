@@ -23,8 +23,10 @@ apps/
  - my-app2 - react
  - my-api - graphQL, postgress
  - my-app2 - node, mongoDB
+
 libs/
  - ui-kit
+ 
 infrastructure/
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
