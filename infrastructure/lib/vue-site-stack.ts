@@ -4,6 +4,9 @@ import * as s3 from "aws-cdk-lib/aws-s3"
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront"
 import path from "path"
 import { StaticSite } from "./constructs/static-site"
+import { getConfig } from "../config"
+
+const config = getConfig()
 
 interface VueSiteSiteStackProps extends cdk.StackProps {
   readonly envName: string
@@ -60,25 +63,24 @@ export class VueSiteStackProps extends cdk.Stack {
 
   private setEnvConfig() {
     const defaultEnvConfig: EnvConfig = {
-      apiBaseUrl: `${this.props.envName}-domain.com`,
+      apiBaseUrl: `${this.props.envName}-codescape.${config.DOMAIN}`,
       domain: {
-        domainName: `${this.props.envName}-codescape.dev.theroom.engineering`,
-        hostedZone: `dev.theroom.engineering`,
+        domainName: `${this.props.envName}-codescape.${config.DOMAIN}`,
+        hostedZone: `codescape.${config.DOMAIN}`,
         isExternalDomain: false,
-        certificateArn:
-          "arn:aws:acm:us-east-1:798613990450:certificate/02045171-49c1-4666-9ea5-6b33d69da0cc",
+        certificateArn: config.CERTIFACE_ARN,
       },
     }
 
     const envSpecificConfig: { [key: string]: Partial<EnvConfig> } = {
       prod: {
-        apiBaseUrl: `${this.props.envName}-prod-domain.com`,
+        apiBaseUrl: `${this.props.envName}-codescape-prod.${config.DOMAIN}`,
         domain: {
           // domainName: `codescp.theroom.com`,
           isExternalDomain: true,
-          domainName: `${this.props.envName}-codescape-prod.dev.theroom.engineering`,
+          domainName: `${this.props.envName}-codescape-prod.${config.DOMAIN}`,
           // certificateArn:
-          //   "arn:aws:acm:us-east-1:748321714498:certificate/7b832537-536f-4509-b58a-9c82248c025e",
+          //   "",
         },
       },
     }

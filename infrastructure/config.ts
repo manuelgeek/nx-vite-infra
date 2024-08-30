@@ -9,6 +9,8 @@ export type ConfigProps = {
   REGION: string
   AWS_DEV_ACCOUNT: string
   AWS_PROD_ACCOUNT: string
+  DOMAIN: string
+  CERTIFACE_ARN: string
 }
 
 // 3. Define a function to retrieve our env variables
@@ -16,4 +18,6 @@ export const getConfig = (): ConfigProps => ({
   REGION: process.env.REGION || "eu-east-1",
   AWS_DEV_ACCOUNT: process.env.AWS_DEV_ACCOUNT || "",
   AWS_PROD_ACCOUNT: process.env.AWS_PROD_ACCOUNT || "",
+  DOMAIN: process.env.DOMAIN || "",
+  CERTIFACE_ARN: process.env.CERTIFACE_ARN || "",
 })
