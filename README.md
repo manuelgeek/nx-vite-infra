@@ -1,16 +1,31 @@
-# NxViteVue
+# NxViteInfra
 
-> Building Vue 3 in Nx with Vite
+> Building Vue 3, React, GraphQL in Nx with Vite, adding AWS CDK infra layer
 
 ### Added
 
 - Vue 3 with Vite
+- React with Vite [TODO]
+- GraphQL Backend [TODO]
 - TypeScript
 - eslint
 - prettier
 - lint-staged with husky
 - tailwindcss
 - Storybook
+- AWS CDK infra
+- Corepack [TODO]
+
+### Project Plan
+
+apps/
+ - my-app - vue
+ - my-app2 - react
+ - my-api - graphQL, postgress
+ - my-app2 - node, mongoDB
+libs/
+ - ui-kit
+infrastructure/
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
