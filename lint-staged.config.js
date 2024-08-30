@@ -1,6 +1,6 @@
 module.exports = {
   // This will lint and format TypeScript, Vue and  //JavaScript files
-  "(apps|libs)/**/*.(ts|tsx|js|vue)": (filenames) => [
+  "(apps|libs|infrastructure)/**/*.(ts|tsx|js|vue)": (filenames) => [
     `yarn eslint --fix ${filenames.join(" ")}`,
     `yarn prettier --write ${filenames.join(" ")}`,
   ],
