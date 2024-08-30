@@ -40,3 +40,4 @@ Thumbs.db
 /libs/ui-kit/storybook-static/
 apps/my-app/.env
 infrastructure/.env
+.nx-cache
