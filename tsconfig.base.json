@@ -10,14 +10,23 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2018", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-vite-vue/ui-kit": ["libs/ui-kit/src/index.ts"]
+      "@nx-vite-infra/ui-kit": ["libs/ui-kit/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "dist",
+    "infrastructure",
+    "dist",
+    ".nx-cache",
+    ".yarn",
+    ".vscode"
+  ]
 }

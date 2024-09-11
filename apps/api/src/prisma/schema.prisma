@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output          = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 1-n with trade and role
+// company can have many roles
+model Company {
+  id            Int      @id @default(autoincrement())
+  name          String?
+  contactPerson String?
+  bio           String?
+  email         String?
+  website       String?
+  roles         Role[]
+}
+
+// 1-n with skill, n-1 with company
+// a role can have many skills
+// a company can have many roles
+model Role {
+  id        Int     @id @default(autoincrement())
+  name      String?
+  skills    Skill[]
+  company   Company? @relation(fields: [companyId], references: [id]) // not in db, used by Prisma to set relation
+  companyId Int? // the foreign key, this is in the db
+}
+
+// 1-n with role
+model Skill {
+  id     Int    @id @default(autoincrement())
+  name   String?
+  role   Role?   @relation(fields: [roleId], references: [id])
+  roleId Int?
+}

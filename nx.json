@@ -1,5 +1,4 @@
 {
-  "npmScope": "nx-vite-vue",
   "neverConnectToCloud": true,
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -11,32 +10,41 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/tsconfig.storybook.json"
+      "!{projectRoot}/tsconfig.storybook.json",
+      "!{projectRoot}/eslint.config.js"
     ],
     "sharedGlobals": []
   },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/eslint.config.js"
+      ],
+      "cache": true
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true
     },
     "@nx/esbuild:esbuild": {
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "e2e": {
+      "cache": true
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "options": {
-        "cacheDirectory": "./.nx-cache",
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "YzYxNzIxZjUtOGM2Yy00ODMxLWE2MmQtNWIzYmIzOTI2NWNmfHJlYWQtd3JpdGU="
       }
     }
@@ -59,5 +67,6 @@
         "targetName": "eslint:lint"
       }
     }
-  ]
+  ],
+  "cacheDirectory": "./.nx-cache"
 }

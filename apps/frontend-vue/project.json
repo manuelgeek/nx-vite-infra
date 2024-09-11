@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/frontend-vue/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nxext/vite:build",
@@ -57,6 +58,5 @@
         "vitestConfig": "apps/frontend-vue/vitest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }

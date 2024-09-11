@@ -42,3 +42,5 @@ apps/frontend-vue/.env
 infrastructure/.env
 .nx-cache
 .nx
+apps/api/src/generated
+*.env

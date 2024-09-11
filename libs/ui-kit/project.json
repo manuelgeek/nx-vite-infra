@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/ui-kit/src",
   "projectType": "library",
+  "tags": [],
   "targets": {
     "storybook": {
       "executor": "@nrwl/workspace:run-commands",
@@ -14,14 +15,12 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "libs/ui-kit",
-        "commands": [
-          "npm run build-storybook"
-        ]
+        "commands": ["npm run build-storybook"]
       }
     },
     "build": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["dist/libs/storybook/"],
+      "outputs": ["{workspaceRoot}/dist/libs/storybook/"],
       "options": {
         "commands": [
           "cp -r libs/ui-kit/storybook-static/** dist/libs/storybook/"
@@ -30,12 +29,11 @@
       },
       "dependsOn": [
         {
-          "target": "build-storybook",
-          "projects": "self"
+          "target": "build-storybook"
         },
         {
           "target": "build",
-          "projects": "dependencies"
+          "dependencies": true
         }
       ]
     },
@@ -60,6 +58,5 @@
         }
       }
     }
-  },
-  "tags": []
+  }
 }

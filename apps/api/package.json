@@ -1,0 +1,16 @@
+{
+  "name": "@nx-vite-infra/api",
+  "version": "1.0.0",
+  "description": "A sample Express app to demonstrate using Apollo GraphQL with Nexus and Prisma",
+  "main": "src/server.ts",
+  "keywords": [
+    "apollo",
+    "graphql",
+    "nexus",
+    "prisma",
+    "node",
+    "express"
+  ],
+  "author": "manuelgeek",
+  "license": "MIT"
+}

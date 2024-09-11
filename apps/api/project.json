@@ -5,6 +5,70 @@
   "projectType": "application",
   "tags": [],
   "targets": {
+    "nexus-generate": {
+      "executor": "nx:run-commands",
+      "outputs": [
+        "{projectRoot}/graphql/schema.graphql",
+        "{workspaceRoot}/node_modules/@types/nexus-typegen-custom/index.d.ts"
+      ],
+      "options": {
+        "cwd": "apps/api/",
+        "commands": [
+          "npx cross-env TS_NODE_PROJECT=tsconfig.app.json ts-node -r tsconfig-paths/register --transpile-only src/schema.ts"
+        ]
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ]
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/api",
+        "commands": ["npx prisma format --schema src/prisma/schema.prisma"]
+      }
+    },
+    "migrate-dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/api",
+        "commands": ["npx prisma migrate dev --schema src/prisma/schema.prisma"]
+      }
+    },
+    "migrate-reset": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/api",
+        "commands": [
+          "npx prisma migrate reset --force --schema src/prisma/schema.prisma"
+        ]
+      }
+    },
+    "migrate-deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/api",
+        "commands": [
+          "npx prisma migrate deploy --schema src/prisma/schema.prisma"
+        ]
+      }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/src/generated"],
+      "options": {
+        "cwd": "apps/api",
+        "commands": [
+          {
+            "command": "npx prisma generate --schema src/prisma/schema.prisma",
+            "forwardAllArgs": false
+          }
+        ]
+      }
+    },
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
@@ -14,9 +78,8 @@
         "outputPath": "dist/apps/api",
         "format": ["cjs"],
         "bundle": false,
-        "main": "apps/api/src/main.ts",
+        "main": "apps/api/src/server.ts",
         "tsConfig": "apps/api/tsconfig.app.json",
-        "assets": ["apps/api/src/assets"],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
@@ -35,7 +98,15 @@
             }
           }
         }
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "generate"
+        },
+        {
+          "target": "nexus-generate"
+        }
+      ]
     },
     "serve": {
       "executor": "@nx/js:node",

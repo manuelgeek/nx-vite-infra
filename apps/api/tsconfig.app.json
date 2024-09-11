@@ -2,9 +2,19 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "target": "ES2018",
     "module": "commonjs",
+    "lib": ["esnext"],
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
     "types": ["node"]
   },
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "exclude": [
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/generated"
+  ],
   "include": ["src/**/*.ts"]
 }
