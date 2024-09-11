@@ -47,10 +47,10 @@ export class VueSiteStackProps extends cdk.Stack {
     })
 
     const rootPath = path.join(process.cwd(), "..")
-    const compiledAssetsPath = path.join(rootPath, "dist/apps/my-app")
+    const compiledAssetsPath = path.join(rootPath, "dist/apps/frontend-vue")
 
     new StaticSite(this, `VueSite`, {
-      buildCommand: "npx nx run my-app:build --configuration production",
+      buildCommand: "npx nx run frontend-vue:build --configuration production",
       buildOutput: compiledAssetsPath,
       buildCwd: rootPath,
       environment: {

@@ -51,7 +51,7 @@
       }
     }
   },
-  "defaultProject": "my-app",
+  "defaultProject": "frontend-vue",
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",

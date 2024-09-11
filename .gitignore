@@ -38,7 +38,7 @@ testem.log
 .DS_Store
 Thumbs.db
 /libs/ui-kit/storybook-static/
-apps/my-app/.env
+apps/frontend-vue/.env
 infrastructure/.env
 .nx-cache
 .nx

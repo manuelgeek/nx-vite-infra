@@ -1,7 +1,7 @@
 {
-  "name": "my-app",
+  "name": "frontend-vue",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/my-app/src",
+  "sourceRoot": "apps/frontend-vue/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,17 +9,17 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/my-app",
+        "outputPath": "dist/apps/frontend-vue",
         "baseHref": "/",
-        "configFile": "apps/my-app/vite.config.ts",
-        "postcssConfig": "apps/my-app/postcss.config.js"
+        "configFile": "apps/frontend-vue/vite.config.ts",
+        "postcssConfig": "apps/frontend-vue/postcss.config.js"
       },
       "configurations": {
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/my-app/src/environments/environment.ts",
-              "with": "apps/my-app/src/environments/environment.prod.ts"
+              "replace": "apps/frontend-vue/src/environments/environment.ts",
+              "with": "apps/frontend-vue/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -28,17 +28,17 @@
     "serve": {
       "executor": "@nxext/vite:dev",
       "options": {
-        "outputPath": "dist/apps/my-app",
+        "outputPath": "dist/apps/frontend-vue",
         "baseHref": "/",
-        "configFile": "apps/my-app/vite.config.ts",
-        "postcssConfig": "apps/my-app/postcss.config.js",
+        "configFile": "apps/frontend-vue/vite.config.ts",
+        "postcssConfig": "apps/frontend-vue/postcss.config.js"
       },
       "configurations": {
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/my-app/src/environments/environment.ts",
-              "with": "apps/my-app/src/environments/environment.prod.ts"
+              "replace": "apps/frontend-vue/src/environments/environment.ts",
+              "with": "apps/frontend-vue/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -48,13 +48,13 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/my-app/**/*.{ts,js,tsx,jsx}"]
+        "lintFilePatterns": ["apps/frontend-vue/**/*.{ts,js,tsx,jsx}"]
       }
     },
     "test": {
       "executor": "@nxext/vitest:vitest",
       "options": {
-        "vitestConfig": "apps/my-app/vitest.config.ts"
+        "vitestConfig": "apps/frontend-vue/vitest.config.ts"
       }
     }
   },

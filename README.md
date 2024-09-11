@@ -6,7 +6,7 @@
 
 - Vue 3 with Vite
 - React with Vite [TODO]
-- GraphQL Backend [TODO]
+- GraphQL Backend
 - TypeScript
 - eslint
 - prettier
@@ -19,13 +19,15 @@
 ### Project Plan
 
 apps/
- - my-app - vue
- - my-app2 - react
- - my-api - graphQL, postgress
- - my-app2 - node, mongoDB
+
+- frontend-vue - vue
+- frontend-react - react
+- api - graphQL, postgress
+- api-mongo - node, mongoDB
 
 libs/
- - ui-kit
+
+- ui-kit
 
 infrastructure/
 
