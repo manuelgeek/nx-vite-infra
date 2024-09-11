@@ -41,3 +41,4 @@ Thumbs.db
 apps/my-app/.env
 infrastructure/.env
 .nx-cache
+.nx
