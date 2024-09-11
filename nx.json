@@ -53,8 +53,7 @@
           "test",
           "generate"
         ],
-        "parallel": 1,
-        "accessToken": "YzYxNzIxZjUtOGM2Yy00ODMxLWE2MmQtNWIzYmIzOTI2NWNmfHJlYWQtd3JpdGU="
+        "parallel": 1
       }
     }
   },
