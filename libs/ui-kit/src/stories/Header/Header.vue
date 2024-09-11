@@ -55,11 +55,11 @@
 </template>
 
 <script>
-import "./header.css"
-import MyButton from "../Button"
+import './header.css'
+import MyButton from '../Button'
 
 export default {
-  name: "MyHeader",
+  name: 'MyHeader',
 
   components: { MyButton },
 
@@ -69,6 +69,6 @@ export default {
     },
   },
 
-  emits: ["login", "logout", "createAccount"],
+  emits: ['login', 'logout', 'createAccount'],
 }
 </script>

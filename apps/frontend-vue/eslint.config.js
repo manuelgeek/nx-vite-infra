@@ -19,6 +19,7 @@ module.exports = [
       vue: eslintPluginVue,
     },
   },
+  { ignores: ['!**/*'] },
   {
     languageOptions: {
       parser: vueEslintParser,
@@ -53,13 +54,20 @@ module.exports = [
       'no-console': 'error',
       'prefer-template': 'error',
       'no-useless-concat': 'error',
-      'vuejs-accessibility/form-control-has-label': 'off',
+      '@typescript-eslint/ban-types': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+      'import/extensions': 'off',
+      '@nrwl/nx/enforce-module-boundaries': 'off',
+      'import/no-unresolved': 'off',
     },
   },
   {
     files: ['**/*.ts', '**/*.js', '**/*.vue'],
     languageOptions: {
-      parserOptions: { project: ['apps/efrontend-vue/tsconfig.*?.json'] },
+      parserOptions: {
+        project: ['apps/frontend-vue/tsconfig.*?.json'],
+        extraFileExtensions: ['.vue'],
+      },
     },
   },
 ]

@@ -16,5 +16,5 @@
     "src/**/*.test.ts",
     "src/generated"
   ],
-  "include": ["src/**/*.ts"]
+  "include": ["**/*.ts", "**/*.js"]
 }

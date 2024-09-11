@@ -49,7 +49,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/frontend-vue/**/*.{ts,js,tsx,jsx}"]
+        "lintFilePatterns": ["apps/frontend-vue/**/*.{ts,js,tsx,jsx,vue}"]
       }
     },
     "test": {

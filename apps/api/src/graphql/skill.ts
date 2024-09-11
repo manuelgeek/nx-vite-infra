@@ -1,12 +1,4 @@
-import {
-  arg,
-  extendType,
-  intArg,
-  list,
-  nonNull,
-  objectType,
-  stringArg,
-} from 'nexus'
+import { extendType, intArg, nonNull, objectType, stringArg } from 'nexus'
 
 export const Skill = objectType({
   name: 'Skill',

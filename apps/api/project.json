@@ -131,6 +131,13 @@
       "options": {
         "jestConfig": "apps/api/jest.config.ts"
       }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/api/**/*.{ts,js,tsx,jsx}"]
+      }
     }
   }
 }

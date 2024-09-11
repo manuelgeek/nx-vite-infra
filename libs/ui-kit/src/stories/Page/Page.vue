@@ -4,7 +4,7 @@
       :user="user"
       @login="onLogin"
       @logout="onLogout"
-      @createAccount="onCreateAccount"
+      @create-account="onCreateAccount"
     />
 
     <section>
@@ -76,11 +76,11 @@
 </template>
 
 <script>
-import "./page.css"
-import MyHeader from "../Header"
+import './page.css'
+import MyHeader from '../Header'
 
 export default {
-  name: "MyPage",
+  name: 'MyPage',
 
   components: { MyHeader },
 
@@ -92,13 +92,13 @@ export default {
 
   methods: {
     onLogin() {
-      this.user = { name: "Jane Doe" }
+      this.user = { name: 'Jane Doe' }
     },
     onLogout() {
       this.user = null
     },
     onCreateAccount() {
-      this.user = { name: "Jane Doe" }
+      this.user = { name: 'Jane Doe' }
     },
   },
 }

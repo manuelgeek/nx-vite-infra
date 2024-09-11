@@ -10,7 +10,7 @@ const compat = new FlatCompat({
 
 module.exports = [
   ...compat.extends(
-    'airbnb-typescript',
+    // 'airbnb-typescript',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@nrwl/nx/typescript',
@@ -51,7 +51,9 @@ module.exports = [
       '@typescript-eslint/dot-notation': 'off',
       '@typescript-eslint/no-implied-eval': 'off',
       '@typescript-eslint/return-await': 'off',
-      // 'import/extension': 'off',
+      'import/extension': 'off',
+      'import/namespace': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
       // 'import/no-named-as-default-member': 'off',
     },
   },
