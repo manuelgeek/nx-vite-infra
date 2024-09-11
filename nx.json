@@ -43,8 +43,17 @@
     }
   },
   "tasksRunnerOptions": {
+    "runner": "nx/tasks-runners/default",
     "default": {
       "options": {
+        "cacheableOperations": [
+          "build",
+          "nexus-generate",
+          "lint",
+          "test",
+          "generate"
+        ],
+        "parallel": 1,
         "accessToken": "YzYxNzIxZjUtOGM2Yy00ODMxLWE2MmQtNWIzYmIzOTI2NWNmfHJlYWQtd3JpdGU="
       }
     }
