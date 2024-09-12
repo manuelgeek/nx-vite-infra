@@ -69,7 +69,7 @@
         ]
       }
     },
-    "build": {
+    "build-server": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
@@ -108,20 +108,45 @@
         }
       ]
     },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/api/"],
+      "options": {
+        "commands": [
+          "cp apps/api/Dockerfile dist/apps/api/",
+          "cp apps/api/docker-entrypoint.sh dist/apps/api/",
+          "cp apps/api/.dockerignore dist/apps/api/",
+          "cp -r apps/api/src/prisma/** dist/apps/api/",
+          "cp apps/api/src/generated/prisma/libquery_engine-debian-* dist/apps/api/",
+          "cp apps/api/package.json dist/apps/api/",
+          "npx copyfiles -u 3 \"apps/api/node_modules/**/*\" dist/apps/api/node_modules"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build-server"
+        },
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ]
+    },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": ["build"],
+      "dependsOn": ["build-server"],
       "options": {
-        "buildTarget": "api:build",
+        "buildTarget": "api:build-server",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "api:build:development"
+          "buildTarget": "api:build-server:development"
         },
         "production": {
-          "buildTarget": "api:build:production"
+          "buildTarget": "api:build-server:production"
         }
       }
     },
