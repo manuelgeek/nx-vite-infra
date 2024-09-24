@@ -44,3 +44,7 @@ infrastructure/.env
 .nx
 apps/api/src/generated
 *.env
+
+# Next.js
+.next
+out
