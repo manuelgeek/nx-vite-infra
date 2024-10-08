@@ -14,5 +14,6 @@ export const tailwindTheme = {
     'primary-600': '#1C64F2',
     'primary-700': '#1A56DB',
     'primary-800': '#1E429F',
+    secondary: '#FFD04D',
   },
 }

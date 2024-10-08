@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nxext/vite:build",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -14,20 +14,10 @@
         "baseHref": "/",
         "configFile": "apps/frontend-vue/vite.config.ts",
         "postcssConfig": "apps/frontend-vue/postcss.config.js"
-      },
-      "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/frontend-vue/src/environments/environment.ts",
-              "with": "apps/frontend-vue/src/environments/environment.prod.ts"
-            }
-          ]
-        }
       }
     },
     "serve": {
-      "executor": "@nxext/vite:dev",
+      "executor": "@nx/vite:serve",
       "options": {
         "outputPath": "dist/apps/frontend-vue",
         "baseHref": "/",
@@ -53,7 +43,7 @@
       }
     },
     "test": {
-      "executor": "@nxext/vitest:vitest",
+      "executor": "@nx/vite:vitest",
       "options": {
         "vitestConfig": "apps/frontend-vue/vitest.config.ts"
       }

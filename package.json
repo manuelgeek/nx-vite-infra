@@ -1,5 +1,5 @@
 {
-  "name": "nx-vite-vue",
+  "name": "nx-vite-infra",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -8,8 +8,8 @@
     "lint": "nx run-many --target=lint --all --parallel",
     "test": "nx run-many --target=test --all --parallel",
     "build": "nx run-many --target=build --all --parallel",
-    "storybook:serve": "nx run ui-kit:storybook",
-    "storybook:build": "nx run ui-kit:build",
+    "storybook:serve": "nx run ui-kit-vue:storybook",
+    "storybook:build": "nx run ui-kit-vue:build",
     "prepare": "husky install"
   },
   "private": true,
@@ -27,8 +27,8 @@
     "@nx/js": "19.7.2",
     "@nx/next": "19.7.2",
     "@nx/node": "19.7.2",
-    "@nxext/vite": "^15.0.0",
-    "@nxext/vitest": "^15.0.0",
+    "@nx/vite": "19.7.2",
+    "@nx/web": "19.7.2",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",

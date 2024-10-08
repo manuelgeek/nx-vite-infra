@@ -1,0 +1,65 @@
+{
+  "name": "ui-kit-vue",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-kit-vue/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["cd libs/ui-kit-vue && npm run storybook"]
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/ui-kit-vue",
+        "commands": ["npm run build-storybook"]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/storybook/"],
+      "options": {
+        "commands": [
+          "cp -r libs/ui-kit-vue/storybook-static/** dist/libs/storybook/"
+        ],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build-storybook"
+        },
+        {
+          "target": "build",
+          "dependencies": true
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui-kit-vue/**/*.ts",
+          "libs/ui-kit-vue/**/*.vue"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui-kit-vue/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  }
+}
