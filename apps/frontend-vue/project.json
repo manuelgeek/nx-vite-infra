@@ -6,44 +6,21 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nxext/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/frontend-vue/"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/frontend-vue",
-        "baseHref": "/",
-        "configFile": "apps/frontend-vue/vite.config.ts",
-        "postcssConfig": "apps/frontend-vue/postcss.config.js"
+        "commands": [
+          "mkdir -p dist/apps/frontend-vue",
+          "cp -r apps/frontend-vue/dist/** dist/apps/frontend-vue/"
+        ],
+        "parallel": false
       },
-      "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/frontend-vue/src/environments/environment.ts",
-              "with": "apps/frontend-vue/src/environments/environment.prod.ts"
-            }
-          ]
+      "dependsOn": [
+        {
+          "target": "vite:build"
         }
-      }
-    },
-    "serve": {
-      "executor": "@nxext/vite:dev",
-      "options": {
-        "outputPath": "dist/apps/frontend-vue",
-        "baseHref": "/",
-        "configFile": "apps/frontend-vue/vite.config.ts",
-        "postcssConfig": "apps/frontend-vue/postcss.config.js"
-      },
-      "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/frontend-vue/src/environments/environment.ts",
-              "with": "apps/frontend-vue/src/environments/environment.prod.ts"
-            }
-          ]
-        }
-      }
+      ]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -53,7 +30,7 @@
       }
     },
     "test": {
-      "executor": "@nxext/vitest:vitest",
+      "executor": "@nx/vite:test",
       "options": {
         "vitestConfig": "apps/frontend-vue/vitest.config.ts"
       }

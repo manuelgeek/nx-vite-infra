@@ -16,7 +16,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-vite-infra/ui-kit": ["libs/ui-kit/src/index.ts"]
+      "@nx-vite-infra/ui-kit-vue": ["libs/ui-kit-vue/src/index.ts"]
     }
   },
   "exclude": [

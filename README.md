@@ -21,13 +21,13 @@
 apps/
 
 - frontend-vue - vue
-- frontend-react - react
+- frontend-next - react
 - api - graphQL, postgress
 - api-mongo - node, mongoDB
 
 libs/
 
-- ui-kit
+- ui-kit-vue
 
 infrastructure/
 

@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "types": []
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.vue"],
+  "exclude": [
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js"
+  ]
+}

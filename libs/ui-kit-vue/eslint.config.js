@@ -20,7 +20,13 @@ module.exports = [
     },
   },
   {
-    ignores: ['!**/*', '**/dist/*', '**/node_modules', '**/vite.config.ts'],
+    ignores: [
+      '!**/*',
+      '**/*.config.js',
+      '**/.storybook/*',
+      '**/storybook-static/*',
+      '**/node_modules',
+    ],
   },
   {
     languageOptions: {
@@ -61,13 +67,14 @@ module.exports = [
       'import/extensions': 'off',
       '@nrwl/nx/enforce-module-boundaries': 'off',
       'import/no-unresolved': 'off',
+      'vue/require-default-prop': 'off',
     },
   },
   {
     files: ['**/*.ts', '**/*.js', '**/*.vue'],
     languageOptions: {
       parserOptions: {
-        project: ['apps/frontend-vue/tsconfig.*?.json'],
+        project: ['libs/ui-kit-vue/tsconfig.*?.json'],
         extraFileExtensions: ['.vue'],
       },
     },
