@@ -41,18 +41,12 @@ jobs:
       - name: Install
         run: |
           yarn
-      #    yarn prepare:front
-
-      # - name: Format
-      #   run: yarn format:check
 
       - name: Lint
         run: yarn lint
 
-      # - name: Test
-      #   run: yarn test
+      - name: Test
+        run: yarn test --passWithNoTests
 
-
-      #  TODO: fix storybook builds
-      # - name: Build
-      #   run: yarn build
+      - name: Build
+        run: yarn build
