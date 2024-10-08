@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormInput, CustomButton } from '@nx-vite-vue/ui-kit-vue'
+import { FormInput, CustomButton } from '@nx-vite-infra/ui-kit-vue'
 </script>
 <template>
   <!-- component -->

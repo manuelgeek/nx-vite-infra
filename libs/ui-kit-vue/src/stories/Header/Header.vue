@@ -26,7 +26,7 @@
         <h1>Acme</h1>
       </div>
       <div>
-        <span v-if="user" class="welcome"
+        <span v-if="user" class="welcome text-secondary"
           >Welcome, <b>{{ user.name }}</b
           >!</span
         >

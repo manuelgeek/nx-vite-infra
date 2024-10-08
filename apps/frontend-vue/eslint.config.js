@@ -19,7 +19,9 @@ module.exports = [
       vue: eslintPluginVue,
     },
   },
-  { ignores: ['!**/*'] },
+  {
+    ignores: ['!**/*', '**/dist/*', '**/node_modules', '**/vite.config.ts'],
+  },
   {
     languageOptions: {
       parser: vueEslintParser,

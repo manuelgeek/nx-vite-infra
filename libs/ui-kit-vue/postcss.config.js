@@ -1,5 +1,5 @@
 const { join } = require('path')
-const baseConfig = require('../../../.tailwind/postcss.config')
+const baseConfig = require('../../.tailwind/postcss.config')
 
 module.exports = {
   ...baseConfig,

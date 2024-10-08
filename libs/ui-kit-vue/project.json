@@ -5,35 +5,20 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "storybook": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": ["cd libs/ui-kit-vue && npm run storybook"]
-      }
-    },
-    "build-storybook": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "libs/ui-kit-vue",
-        "commands": ["npm run build-storybook"]
-      }
-    },
     "build": {
-      "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["{workspaceRoot}/dist/libs/storybook/"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/ui-kit-vue/"],
+      "defaultConfiguration": "production",
       "options": {
         "commands": [
-          "cp -r libs/ui-kit-vue/storybook-static/** dist/libs/storybook/"
+          "mkdir -p dist/libs/ui-kit-vue",
+          "cp -r libs/ui-kit-vue/storybook-static/** dist/libs/ui-kit-vue/"
         ],
         "parallel": false
       },
       "dependsOn": [
         {
           "target": "build-storybook"
-        },
-        {
-          "target": "build",
-          "dependencies": true
         }
       ]
     },
@@ -43,6 +28,7 @@
       "options": {
         "lintFilePatterns": [
           "libs/ui-kit-vue/**/*.ts",
+          "libs/ui-kit-vue/**/*.js",
           "libs/ui-kit-vue/**/*.vue"
         ]
       }

@@ -19,7 +19,15 @@ module.exports = [
       vue: eslintPluginVue,
     },
   },
-  { ignores: ['!**/*'] },
+  {
+    ignores: [
+      '!**/*',
+      '**/*.config.js',
+      '**/.storybook/*',
+      '**/storybook-static/*',
+      '**/node_modules',
+    ],
+  },
   {
     languageOptions: {
       parser: vueEslintParser,
@@ -59,6 +67,7 @@ module.exports = [
       'import/extensions': 'off',
       '@nrwl/nx/enforce-module-boundaries': 'off',
       'import/no-unresolved': 'off',
+      'vue/require-default-prop': 'off',
     },
   },
   {

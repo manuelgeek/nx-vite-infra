@@ -1,11 +1,13 @@
 const { join } = require('path')
-const baseConfig = require('../../../.tailwind/tailwind.config')
+const baseConfig = require('../../.tailwind/tailwind.config')
 
 module.exports = {
   presets: [baseConfig],
   content: [
-    join(__dirname, '../src/**/!(*.stories|*.spec).{ts,tsx,html,vue,js}'),
+    join(__dirname, './src/**/!(*.stories|*.spec).{ts,tsx,html,vue,js}'),
   ],
+  // Toggle dark-mode based on .dark class or data-mode="dark"
+  darkMode: ['class', '[data-mode="dark"]'],
   theme: {
     extend: {
       boxShadow: {
