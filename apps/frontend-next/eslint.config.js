@@ -9,27 +9,21 @@ const compat = new FlatCompat({
 
 module.exports = [
   ...compat.extends(
-    'plugin:@nx/react-typescript',
-    'next',
-    'next/core-web-vitals'
+    'plugin:@nx/react-typescript'
+    // 'next',
+    // 'next/core-web-vitals'
   ),
   ...baseConfig,
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
-      '@next/next/no-html-link-for-pages': [
-        'error',
-        'apps/frontend-next/pages',
-      ],
+      '@typescript-eslint/no-require-imports': 'off',
+      'import/extensions': 'off',
+      'import/no-unresolved': 'off',
     },
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    rules: {},
-  },
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    rules: {},
+    languageOptions: {
+      parserOptions: { project: ['apps/frontend-next/tsconfig.json'] },
+    },
   },
   ...compat.config({ env: { jest: true } }).map((config) => ({
     ...config,
@@ -38,5 +32,5 @@ module.exports = [
       ...config.rules,
     },
   })),
-  { ignores: ['.next/**/*'] },
+  { ignores: ['!**/*', '**/.next/*', '**/jest.config.ts'] },
 ]
