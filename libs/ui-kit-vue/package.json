@@ -1,5 +1,5 @@
 {
-  "name": "ui-kit-vue",
+  "name": "@nx-vite-infra/ui-kit-vue",
   "version": "1.0.0",
   "description": "This library was generated with [Nx](https://nx.dev).",
   "keywords": [],
